@@ -1,0 +1,96 @@
+/* =========================================
+   SISTEMA CERO — paleta negro / amarillo
+   ========================================= */
+:root {
+    --cero-black: #0a0a0a;
+    --cero-ink: #171717;
+    --cero-elevated: #262626;
+    --cero-muted: #737373;
+    --cero-sun: #fde047;
+    --cero-gold: #facc15;
+    --cero-amber: #eab308;
+    --cero-honey: #ca8a04;
+    --cero-cream: #fffbeb;
+    --cero-paper: #fafaf8;
+    --cero-fog: #e7e5e4;
+    --white: #ffffff;
+
+    --primary: var(--cero-amber);
+    --primary-dark: var(--cero-honey);
+    --dark-bg: var(--cero-black);
+    --light-bg: var(--cero-paper);
+    --text-main: var(--cero-ink);
+    --text-muted: var(--cero-muted);
+    --border: var(--cero-fog);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+body { background-color: var(--light-bg); color: var(--text-main); line-height: 1.6; }
+a { text-decoration: none; transition: 0.3s; }
+
+/* --- Landing (clases legacy) --- */
+.landing-header { background-color: var(--dark-bg); padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo-public h1 { font-size: 28px; font-weight: 800; color: var(--white); letter-spacing: 1px; }
+.logo-public span { color: var(--cero-sun); }
+
+.nav-links { display: flex; gap: 30px; align-items: center; list-style: none; }
+.nav-links a { color: #d4d4d4; font-weight: 600; font-size: 15px; }
+.nav-links a:hover { color: var(--cero-sun); }
+.btn-ingreso { background-color: var(--cero-amber); color: var(--cero-black) !important; padding: 10px 24px; border-radius: 6px; font-weight: bold; }
+.btn-ingreso:hover { background-color: var(--cero-sun); transform: translateY(-2px); }
+
+.hero { text-align: center; padding: 100px 20px; background-color: var(--white); border-bottom: 1px solid var(--border); }
+.hero h2 { font-size: 46px; color: var(--dark-bg); margin-bottom: 20px; line-height: 1.2; font-weight: 800; }
+.hero h2 span { color: var(--cero-honey); }
+.hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; }
+
+.servicios { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.card-servicio { background: var(--white); padding: 40px 30px; border-radius: 12px; border: 1px solid var(--border); text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.04); transition: 0.3s; }
+.card-servicio:hover { transform: translateY(-5px); border-color: var(--cero-amber); box-shadow: 0 10px 15px rgba(234, 179, 8, 0.12); }
+.card-servicio h3 { font-size: 20px; color: var(--dark-bg); margin-bottom: 15px; }
+.card-servicio p { color: var(--text-muted); font-size: 15px; }
+
+.landing-footer { background-color: var(--dark-bg); color: var(--text-muted); text-align: center; padding: 30px 20px; border-top: 1px solid var(--cero-elevated); margin-top: 50px; }
+
+/* --- Intranet legacy (dashboard-layout) --- */
+.dashboard-layout { display: flex; height: 100vh; overflow: hidden; }
+aside { width: 260px; background-color: var(--dark-bg); color: var(--white); display: flex; flex-direction: column; }
+.logo-container { padding: 25px; text-align: center; border-bottom: 1px solid var(--cero-elevated); }
+.logo-container h1 { font-size: 26px; font-weight: 800; color: var(--white); }
+.logo-container span { color: var(--cero-sun); }
+.logo-container .subtitle { font-size: 12px; color: var(--cero-muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
+nav { flex: 1; padding: 20px 0; }
+.nav-btn, .nav-link { display: block; width: 100%; padding: 15px 25px; background: none; border: none; color: #d4d4d4; text-align: left; cursor: pointer; font-size: 15px; font-weight: 600; }
+.nav-btn:hover, .nav-link:hover { background-color: var(--cero-elevated); color: var(--cero-sun); }
+.nav-btn.active { background-color: var(--cero-amber); color: var(--cero-black); border-left: 4px solid var(--cero-sun); }
+main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+header { background-color: var(--white); padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+.content-area { padding: 30px; overflow-y: auto; height: 100%; background-color: var(--light-bg); }
+.section-module { display: none; }
+.section-module.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.btn-logout { background: #dc2626; color: #ffffff; border: 1px solid rgba(127, 29, 29, 0.35); padding: 10px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.btn-logout:hover { background: #b91c1c; }
+
+.user-info { padding: 16px; border-top: 1px solid var(--cero-elevated); font-size: 13px; color: #d4d4d4; }
+
+/* Formularios (setup, pacientes legacy) */
+.form-container { background: var(--white); padding: 28px; border-radius: 16px; border: 1px solid var(--border); max-width: 440px; margin: 0 auto; box-shadow: 0 8px 30px rgba(10,10,10,0.06); }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 700; font-size: 13px; color: var(--cero-ink); margin-bottom: 6px; }
+.form-group input, .form-group select { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); font-size: 15px; }
+.form-group input:focus { outline: 2px solid var(--cero-amber); outline-offset: 1px; border-color: var(--cero-amber); }
+.btn-submit { background: var(--cero-black); color: var(--cero-sun); border: none; padding: 12px 20px; border-radius: 10px; font-weight: 800; cursor: pointer; width: auto; }
+.btn-submit:hover { background: var(--cero-ink); }
+
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.margin-none { margin: 0; }
+.mt-15 { margin-top: 15px; }
+
+table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+table th { background: var(--cero-black); color: var(--cero-sun); padding: 12px; text-align: left; font-size: 14px; }
+table td { padding: 12px; border-bottom: 1px solid var(--border); }
+table tr:last-child td { border-bottom: none; }

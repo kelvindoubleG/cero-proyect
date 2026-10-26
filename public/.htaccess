@@ -1,0 +1,9 @@
+Options -MultiViews
+RewriteEngine On
+
+# Si la ruta no es una carpeta real
+RewriteCond %{REQUEST_FILENAME} !-d
+# Y tampoco es un archivo real (como una imagen o el CSS)
+RewriteCond %{REQUEST_FILENAME} !-f
+# Entonces mándale todo el tráfico al index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
